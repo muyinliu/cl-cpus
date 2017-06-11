@@ -31,6 +31,7 @@ In Common Lisp:
 ```lisp
 (cpus:get-number-of-processors)
 ```
+will get number of CPUs:
 ```=>
 8
 ```
