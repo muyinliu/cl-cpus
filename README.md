@@ -7,6 +7,9 @@ cl-cpus is a Common Lisp feature to get number of CPUs.
 Copyright (c) 2017 Muyinliu Xing
 Released under the ISC License.
 
+Note: the Linux part of code comes from Edmound Weitz's book Common
+Lisp Recipes.
+
 ## Compatibility
 |  Common Lisp  |  Linux  |  Mac |  Unix | Windows |
 |---------------|:-------:|:----:|:-----:|:-------:|
