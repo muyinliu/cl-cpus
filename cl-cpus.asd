@@ -12,7 +12,9 @@
   ((:file "packages")
    #+linux
    (:file "cl-cpus-linux")
-   #+(or bsd freebsd)
+   #+darwin
+   (:file "cl-cpus-darwin")
+   #+(and (not darwin) (or bsd freebsd))
    (:file "cl-cpus-bsd")
    #+win32
    (:file "cl-cpus-win32")))
