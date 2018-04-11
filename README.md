@@ -11,9 +11,10 @@ Note: the Linux part of code comes from Edmound Weitz's book Common
 Lisp Recipes.
 
 ## Compatibility
-|  Common Lisp  |  Linux  |  Mac |  Unix | Windows |
-|---------------|:-------:|:----:|:-----:|:-------:|
-|  SBCL         |   Yes   |  Yes |       |   Yes   |
+| Common Lisp | Linux | Mac | Unix | Windows |
+|-------------|:-----:|:---:|:----:|:-------:|
+| SBCL        | Yes   | Yes |      | Yes     |
+| CCL         | Yes   | Yes |      | Yes     |
 
 Note: I don't have Unix system so haven't test on Unix yet.
 
