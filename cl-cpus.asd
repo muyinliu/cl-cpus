@@ -3,7 +3,7 @@
 (asdf:defsystem "cl-cpus"
   :name "cpus"
   :description "Get number of CPUs"
-  :version "0.0.1"
+  :version "0.0.2"
   :author "Muyinliu Xing <muyinliu@gmail.com>"
   :license "ISC"
   :serial t
