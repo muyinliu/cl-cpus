@@ -56,9 +56,12 @@
 (cffi:defcfun ("GetSystemInfo" get-system-info) :void
   (data (:pointer (:struct system-info))))
 
-(defun get-number-of-processors ()
-  "Get CPU Threads count."
+(defvar *number-of-processors*
   (cffi:with-foreign-object (info '(:struct system-info))
     (get-system-info info)
     (cffi:foreign-slot-value info '(:struct system-info)
                              'number-of-processors)))
+
+(defun get-number-of-processors ()
+  "Get CPU Threads count."
+  *number-of-processors*)

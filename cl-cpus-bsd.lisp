@@ -13,8 +13,7 @@
   (newp    :pointer)
   (newlen  :unsigned-int))
 
-(defun get-number-of-processors ()
-  "Get CPU Threads count."
+(defvar *number-of-processors*
   (cffi:with-foreign-object (name-pointer :int 2)
     (setf (cffi:mem-aref name-pointer :int 0) +ctl-hw+)
     (setf (cffi:mem-aref name-pointer :int 1) +hw-ncpu+)
@@ -24,3 +23,7 @@
           (if (/= 0 result)
               0
               (cffi:mem-ref oldp :int)))))))
+
+(defun get-number-of-processors ()
+  "Get CPU Threads count."
+  *number-of-processors*)

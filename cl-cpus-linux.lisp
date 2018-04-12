@@ -6,5 +6,8 @@
 (cffi:defcfun "sysconf" :long
   (name :int))
 
+(defvar *number-of-processors* (sysconf +sc-nprocessors-onln+))
+
 (defun get-number-of-processors ()
-  (sysconf +sc-nprocessors-onln+))
+  "Get CPU Threads count."
+  *number-of-processors*)
