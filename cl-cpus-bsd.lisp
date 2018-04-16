@@ -17,12 +17,12 @@
   (cffi:with-foreign-object (name-pointer :int 2)
     (setf (cffi:mem-aref name-pointer :int 0) +ctl-hw+)
     (setf (cffi:mem-aref name-pointer :int 1) +hw-ncpu+)
-    (cffi:with-foreign-pointer (oldp 64)
-      (cffi:with-foreign-pointer (oldlenp 64)
-        (let ((result (sysctl name-pointer 2 oldp oldlenp (cffi:null-pointer) 0)))
-          (if (/= 0 result)
-              0
-              (cffi:mem-ref oldp :int)))))))
+    (cffi:with-foreign-objects ((oldp :pointer)
+                                (oldlenp :pointer))
+      (let ((result (sysctl name-pointer 2 oldp oldlenp (cffi:null-pointer) 0)))
+        (if (/= 0 result)
+            0
+            (cffi:mem-ref oldp :int))))))
 
 (defun get-number-of-processors ()
   "Get CPU Threads count."
